@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Running the Downloader From a PC Command Line</TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<P ALIGN="CENTER"><IMG SRC="eislogosm.gif" WIDTH=93 HEIGHT=106></P>
+<CENTER><IMG SRC="divider.gif" HEIGHT=4 WIDTH=500 ALIGN=ABSCENTER></CENTER>
+<FONT SIZE=2><P ALIGN="CENTER">&nbsp;</P>
+</FONT><I><U><FONT SIZE=5 COLOR="#008000"><P>Evergreen Interactive Systems</P>
+</I></U></FONT><FONT SIZE=2><P>&nbsp;</P>
+</FONT><B><FONT SIZE=7 COLOR="#000080"><P ALIGN="CENTER">The AS/400 Report Downloader</P>
+</FONT><I><FONT SIZE=6 COLOR="#800000"><P ALIGN="CENTER">For Windows 95/98/NT</P>
+</I></FONT><FONT FACE="Arial" SIZE=4><P>Running the Downloader From a PC Command Line</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>The AS/400 Report Downloader may be run from a PC command line or from a PC program (as with the "Shell" command in Visual Basic, for example.) Arguments (parameters) are passed to the Downloader telling it what settings file to load, what type of processing to perform and which AS/400 report to process.</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Running the Downloader From an AS/400 CL Program</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>&nbsp;</P>
+<P>You can run the AS/400 Report Downloader from an AS/400 Control Language program. This feature allows you to set up the Downloader to run automatically after a report has been produced on the AS/400, passing the specifics identifying the report to the Downloader in the form of parameters. (Alternatively, you may run the Downloader from an AS/400 HLL program like RPG by using the "QCMDEXC" API.)</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Requirements for Running the Downloader From a CL Program</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>To run the Downloader from a CL program you must be attached to the AS/400 and Client Access/400 must be installed. You must start an interactive (PC5250) session and then run the CL program from there. The program may be run from a menu or as part of another job stream.</P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Saving Your User ID and Password</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>You should use the Downloader's option to save your user ID and password, or the download process will pause, asking the user for a valid user ID and password.</P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Saving the Settings to a File</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>The AS/400 Report Downloader has the capability to store settings for a download process in a file. You should save the settings for a particular download process in a file and pass the name of the settings file as one of the parameters when calling the Downloader from the CL program. If you do not specify a settings file, the settings that are "remembered" from your last session will be used. You may save settings for all options except password (which may be saved, but not in the settings file,) and the spool file attributes (AS/400 job name, number, spool file name, etc.) The spool file attributes are passed to the Downloader as parameters by the CL program (see example CL program source code.)</P>
+<P>&nbsp;</P>
+<P>To save Downloader settings in a settings file, start the Downloader and manually process a report, specifying the formatting options, page range, type of processing, etc. When the process is complete, save the settings by selecting "Save As..." from the "File" menu on the Downloader's main screen. Give the file a name and use the suggested file extension of ".rds".</P>
+<P>&nbsp;</P>
+<P>Creating a CL Program to Run the Downloader</P>
+<P>The value of running the Downloader from a CL program lies in the ability to process the printer output from a program without user intervention. To accomplish this, the Downloader will accept parameters that identify the report to be processed.</P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Parameters</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>&nbsp;</P>
+<P>Parameters that may be passed to the Downloader ( * signifies a required parameter):</P>
+<P>&nbsp;</P></FONT>
+<P ALIGN="CENTER"><CENTER><TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=584>
+<TR><TD WIDTH="14%" VALIGN="TOP" BGCOLOR="#ffffff">
+<FONT FACE="Arial" SIZE=2><P>Parameter</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP" BGCOLOR="#ffffff">
+<FONT FACE="Arial" SIZE=2><P>Type</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP" BGCOLOR="#ffffff">
+<FONT FACE="Arial" SIZE=2><P>Size</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP" BGCOLOR="#ffffff">
+<FONT FACE="Arial" SIZE=2><P>Value</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP" BGCOLOR="#ffffff">
+<FONT FACE="Arial" SIZE=2><P>Description</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>SETS</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>n/a</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Path and file name</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Name of the settings file to use for common settings</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>FILE *</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>10</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>AS/400 printer file name</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Name of the AS/400 printer file like "QPRINT" or "QSYSPRT"</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>JOB *</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>10</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>AS/400 job name</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Name of the AS/400 job - usually the same as the workstation name</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>USER *</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>10</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>AS/400 user name</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Normally, the AS/400 user profile that the report job ran under</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>NBR *</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>6</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Job number</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>AS/400 job number</FONT></TD>
+</TR>
+<TR><TD WIDTH="14%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>SEQ *</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Char</FONT></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>4</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>Spool file sequence number in the form "0001", "LAST" or "ONLY"</FONT></TD>
+<TD WIDTH="39%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=2><P>The AS/400 spool file's sequence number with leading zeros present. you may also specify "LAST" or "ONLY" (do not use an "*" with LAST on ONLY)</FONT></TD>
+</TR>
+</TABLE>
+</CENTER></P>
+
+<FONT FACE="Arial" SIZE=2><P>&nbsp;</P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Arial" SIZE=4><P>Example CL Program</P>
+</B></FONT><FONT FACE="Arial" SIZE=2><P>The following example AS/400 CL program illustrates a typical use of the Downloader to print the output from an AS/400 report program.</P>
+<P>&nbsp;</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>/*-----------------------------------------------------------------*/</P>
+<P>/* Program - RUNDLOADC - example CL program for automatically */</P>
+<P>/* processing output from an RPG program */</P>
+<P>/* */</P>
+<P>/* */</P>
+<P>/*-----------------------------------------------------------------*/</P>
+<P>/* Revisions */</P>
+<P>/* Date Pgmr Revision */</P>
+<P>/* Created. */</P>
+<P>/*-----------------------------------------------------------------*/</P>
+<P>PGM</P>
+<P>/* */</P>
+<P>DCL VAR(&amp;STRING) TYPE(*CHAR) LEN(123)</P>
+<P>DCL VAR(&amp;JOB) TYPE(*CHAR) LEN(10)</P>
+<P>DCL VAR(&amp;USER) TYPE(*CHAR) LEN(10)</P>
+<P>DCL VAR(&amp;JOBNBR) TYPE(*CHAR) LEN(6)</P>
+<P>DCL VAR(&amp;PRINTSEQ) TYPE(*CHAR) LEN(5)</P>
+<P>/* Your report program goes here... */</P>
+<P>CALL PGM(TESTPRT1)</P>
+<P>/* */</P>
+<P>SNDPGMMSG MSGID(CPF9898) MSGF(QCPFMSG) MSGDTA('Running +</P>
+<P>a Downloader session...') TOPGMQ(*EXT) +</P>
+<P>MSGTYPE(*STATUS)</P>
+<P>/* */</P>
+<P>/* Get specs for this job */</P>
+<P>RTVJOBA JOB(&amp;JOB) USER(&amp;USER) NBR(&amp;JOBNBR)</P>
+<P>/* */</P>
+<P>/* Set the values into a parameter variable... */</P>
+<P>CHGVAR VAR(&amp;STRING) +</P>
+<P>VALUE('c:\Progra~1\AS400R~1\vbspltcp.exe, +</P>
+<P>sets:c:\dloader1.rds, file:QPRINT, job:' +</P>
+<P>*TCAT &amp;JOB *TCAT ', user:' *TCAT &amp;USER +</P>
+<P>*TCAT ', nbr:' *TCAT &amp;JOBNBR *TCAT ', +</P>
+<P>seq:LAST')</P>
+<P>/* */</P>
+<P>/* Start the PC Organizer, if not already active... */</P>
+<P>STRPCO PCTA(*NO)</P>
+<P>MONMSG MSGID(CPF0000)</P>
+<P>/* */</P>
+<P>STRPCCMD PCCMD(&amp;STRING) PAUSE(*NO)</P>
+<P>/* */</P>
+<P>ENDALL: RETURN</P>
+<P>ENDPGM</P>
+</FONT><FONT FACE="Arial" SIZE=2><P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></FONT></BODY>
+</HTML>

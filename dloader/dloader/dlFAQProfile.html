@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Elegant Letter</TITLE>
+<META NAME="Template" CONTENT="C:\Program Files\Microsoft Office\Templates\DLLicense.dot">
+</HEAD>
+<BODY>
+
+<FONT FACE="Arial" SIZE=2><P ALIGN="RIGHT">&nbsp;</P>
+</FONT><FONT FACE="Garamond" SIZE=2><P ALIGN="CENTER"><IMG SRC="eislogosm.gif" WIDTH=143 HEIGHT=162></P>
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">FAQ's – AS/400 Report Downloader and AS/400 Smart File Transfer for TCP/IP</P>
+</FONT><FONT FACE="Arial" SIZE=3><P ALIGN="RIGHT">August 21, 1998</P>
+</FONT><B><FONT FACE="Arial"><P>FAQ:&#9;Why does Evergreen's Report Downloader require a user profile with security officer level authority?</P>
+</B><P>A:&#9;Each user of the Report Downloader runs under his/her own user profile, rather than under the user profile of the person who started the main Downloader server program.  This is required so that user's access to AS/400 objects comes under your ordinary security control.</P>
+<P>In order to accomplish this, the main server program (job DLOADERSRV in subsystem QSYSWRK) must have sufficient authority to check the user ID and password of each user that requests services.  The user ID and password are checked through means of an IBM API and, if valid, a spawned server job is started under the user's own profile.  Also, under this API, unsuccessful signon attempts made through the Downloader are accumulated in the user's profile just like during green-screen signon attempts and may likewise result in a disabled profile.</P>
+<P>The Downloader's installation process creates a security officer level profile named DLOADER. <B> <U>The DLOADER user profile is created by the Downloader installation with a password of *NONE and can not be used to sign on to your AS/400.</B></U> </P>
+<P>Note:  Any user can start the Downloader's main server job with command VBTCP/STRDLOAD, and the server will still run under the DLOADER profile. </P></FONT></BODY>
+</HTML>

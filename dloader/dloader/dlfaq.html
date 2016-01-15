@@ -1,0 +1,417 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="Microsoft Word 97">
+   <meta name="GENERATOR" content="Mozilla/4.6 [en] (Win95; U) [Netscape]">
+   <title>FAQ:</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#006600" vlink="#006600" alink="#FF0000">
+
+<center><a NAME="top"></a>
+<br><font color="#990000"><font size=+2>iSeries Report Downloader</font></font>
+<br><img SRC="faq1.gif" height=100 width=45 align=ABSCENTER><i><font color="#000099"><font size=+3>Frequently
+Asked Questions</font></font></i>
+<br><img SRC="divider.gif" height=4 width=500 align=ABSCENTER></center>
+<font color="#006600"><font face="Coronet"><font size=+3>Q</font></font><font face="Arial"><font size=-1>uestions:</font></font></font>
+<blockquote><font face="Arial"><font color="#006600"><font size=-1>General:</font></font></font>
+<blockquote><font face="Arial"><font color="#006600"><font size=-1><a href="#extending">How
+do I extend the iSeries Report Downloader’s evaluation period?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="dlSpoolControl.html">How
+is the user's access to spool files controlled?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="dlFAQProfile.html">Why
+does the Downloader create a user profile?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#whichversion">How
+do I know which version of the Downloader (TCP/IP or SNA) to use?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#coexisting">Can
+I have both the SNA and TCP/IP versions on the same iSeries at the same
+time?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#installing">How
+do I install the Downloader software?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#macro1">How
+do I use an Excel or Word macro to automatically process the downloaded
+report data?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#macro2">How
+do I use an Excel or Word macro to strip out unwanted page headings?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#installing"></a></font></font></font>&nbsp;</blockquote>
+<font face="Arial"><font color="#008000"><font size=-1>TCP/IP Version:</font></font></font>
+<blockquote><font face="Arial"><font color="#008000"><font size=-1><a href="#firewall">What
+if there's a firewall on my iSeries?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#startingmain">How
+do I start the main server program on the iSeries?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#autostarting">How
+do I get the Downloader server program to start automatically?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#errforcefullyrejected">What
+does it mean when I get the message "connection is forcibly rejected…"?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#chkdload">How
+do I check to see if the main server program is active?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#enddload">How
+do I stop the main server program?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#firewall">What
+TCP/IP ports does the Downloader use?</a></font></font></font></blockquote>
+<font face="Arial"><font color="#008000"><font size=-1>SNA Version:</font></font></font>
+<blockquote><font face="Arial"><font color="#008000"><font size=-1><a href="#router">What's
+a <i>router</i>?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#whatisanynet">What's
+<i>AnyNet</i>?</a></font></font></font>
+<br><font face="Arial"><font color="#008000"><font size=-1><a href="#enablinganynet">How
+do I enable AnyNet?</a></font></font></font></blockquote>
+</blockquote>
+
+<center><img SRC="divider.gif" height=4 width=500 align=ABSCENTER></center>
+<a NAME="extending"></a><font color="#006600"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I extend the iSeries Report Downloader’s evaluation period?</font></font></font>
+<dir><font face="Arial"><font color="#000080"><font size=-1>When an expired
+copy of the evaluation version of the Downloader is launched, it will allow
+you to key in a code number to extend the evaluation period another 30
+days. This code number is:</font></font></font></dir>
+
+<center><font face="Arial"><font color="#000080"><font size=-1>0821</font></font></font></center>
+
+<dir><font face="Arial"><font color="#000080"><font size=-1>Key this number
+in and click "OK" (be sure to include the leading zero.) You will have
+to key in this value each time an expired Downloader evaluation is started.</font></font></font>
+<dir>&nbsp;</dir>
+<font face="Arial"><font color="#000080"><font size=-1>After an additional
+30 days the Downloader evaluation will expire and can't be extended.</font></font></font></dir>
+<a NAME="whichversion"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I know which version of the Downloader (TCP/IP or SNA) to use?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>Use
+the TCP/IP version of the iSeries Report Downloader if your PC is attached
+to the iSeries with Ethernet, Token Ring, PPP, SLIP or the Internet and
+you're using native TCP/IP support (rather than a router, like NetSoft's
+or Rumba's.)</font></font></font>
+<p><font face="Arial"><font color="#000080"><font size=-1>If your PC is
+connected to the iSeries with twinax cable, or if the PC is using the NetSoft
+or Rumba router to communicate with the iSeries, use the SNA version of
+the Downloader.</font></font></font></blockquote>
+<a NAME="coexisting"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>Can
+I have both the SNA and TCP/IP versions on the same iSeries at the same
+time?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>Yes.&nbsp;
+The two versions can coexist on the same iSeries.&nbsp;&nbsp; The SNA version
+is kept in library VBSPL, the TCP/IP version in library VBTCP.</font></font></font></blockquote>
+<a NAME="installing"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I install the Downloader software?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>You
+start by inserting the installation CD into your PC.&nbsp;
+Click on "Run..." on the Start menu.&nbsp; Find the program "Setup.exe"
+on the drive containing the Downloader installation media.&nbsp; Double
+click the Setup.exe program to select it and then click "OK".&nbsp; Follow
+the on-screen instructions to install the PC portion of the Downloader.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>When the PC
+portion of the installation process is complete you'll be prompted to install
+the iSeries portion of the software.&nbsp; You only have to install the
+iSeries portion of the Downloader software once per PC.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>When you've
+installed the Downloader you may access the accompanying documentation
+(Readme.doc in MS Word format or Readme.txt in plain text format).&nbsp;
+This documentation tells you all about using the Downloader.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1></font></font></font>&nbsp;</blockquote>
+<a NAME="macro1"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How do I use an Excel or
+Word macro to automatically process the downloaded report data?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>The
+Downloader can invoke a macro to complete processing over the spool file
+data. You must create and store the macro statements ahead of time, usually
+in a template document or spreadsheet (like "Normal.dot" or "Personal.xls".)&nbsp;
+You can use Excel's or Word's macro recorder to generate your macro statements
+if you wish.&nbsp; Just load a spool file to Excel/Word, start the macro
+recorder and perform the steps that you would like to capture.&nbsp; Then
+turn the macro recorder off.&nbsp;&nbsp; The next time you process the
+same type of report you may invoke the macro by name directly from the
+Downloader.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1></font></font></font>&nbsp;</blockquote>
+<a NAME="macro2"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How do I use an Excel or
+Word macro to strip out unwanted page headings?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>The
+following code copied into a Word macro will search for the word "Page"
+and strip out that line and the next:</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>-------</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Go to upper left corner...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Selection.HomeKey Unit:=wdStory</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Set search parameters...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Selection.Find.ClearFormatting</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+With Selection.Find</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Text = "Page"</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Replacement.Text = ""</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Forward = True</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Wrap = wdFindContinue</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Format = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.MatchCase = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.MatchWholeWord = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.MatchWildcards = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.MatchSoundsLike = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.MatchAllWordForms = False</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+End With</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Find the first occurrence...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Selection.Find.Execute</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Do While Selection.Find.Found = True</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Remove two heading lines...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.HomeKey Unit:=wdLine</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.MoveDown Unit:=wdLine, Count:=2, Extend:=wdExtend</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.Cut</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Find the next occurrence...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.Find.Execute</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Loop</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Selection.Find.ClearFormatting</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Selection.HomeKey Unit:=wdStory</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>------</font></font></font><font face="Arial"><font color="#000080"><font size=-1></font></font></font>
+<p><font face="Arial"><font color="#000080"><font size=-1>This code will
+strip out two heading lines in an Excel spreadsheet:</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>-----</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>Dim lRow As
+Long</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>Dim sRange As
+String</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Turn off error checking...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+On Error Resume Next</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Err.Number = 0</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Go to upper left corner of sheet...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Range("A1").Select</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Look for first occurrence of the word "Page"...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Cells.Find(What:="Page", After:=ActiveCell, LookIn:=xlFormulas, LookAt
+_</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+False).Activate</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'If found, remove that row and the next...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Do While Err.Number = 0</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Get the row number...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lRow = ActiveCell.Row</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Format a range expression...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sRange = CStr(lRow) &amp; ":" &amp; CStr(lRow + 1)</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Select the two-row range -- all columns...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rows(sRange).Select</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Delete the rows and move the rest of the rows up...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.Delete Shift:=xlUp</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'Look for the next occurrence of "Page"...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Cells.FindNext(After:=ActiveCell).Activate</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Loop</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+'Back to upper left corner...</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Range("A1").Select</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>&nbsp;&nbsp;&nbsp;
+Err.Number = 0</font></font></font><font face="Arial"><font color="#000080"><font size=-1></font></font></font>
+<p><font face="Arial"><font color="#000080"><font size=-1>-----</font></font></font></blockquote>
+<a NAME="firewall"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>What if there's a firewall
+on my iSeries?&nbsp; What TCP/IP ports does the Downloader use?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>A "firewall"
+is security software that blocks unauthorized access to your iSeries.&nbsp;
+In order to run the iSeries Report Downloader you must open certain TCP/IP
+ports (note that the Report Downloader uses full iSeries system security
+to control access.):</font></font></font>
+<blockquote>
+<ul>
+<li>
+<font face="Arial"><font color="#000080"><font size=-1>Port 17850 is used
+by the main server program.&nbsp; This port must be opened.</font></font></font></li>
+
+<li>
+<font face="Arial"><font color="#000080"><font size=-1>Ports 17851 through
+17950.&nbsp; When a user starts the Report Downloader the main server program&nbsp;
+will look for an available port between 17851 and 17950.&nbsp; You must
+at least open port 17851.&nbsp; If you expect multiple concurrent users
+you should open more ports beginning with port 17852 through the number
+of concurrent users you expect.</font></font></font></li>
+</ul>
+</blockquote>
+<font face="Arial"><font color="#000080"><font size=-1>All TCP/IP client/server
+applications run through ports on your iSeries.&nbsp; Telnet runs through
+port 23, smtp run through port 25, pop3 runs through port 110, etc.</font></font></font>
+<br><u><font face="Arial"><font color="#000080"><font size=-1>In TCP/IP
+client/server applications, the active server program, listening on the
+port, is responsible for security.&nbsp; The iSeries Report Downloader uses
+regular iSeries system security to prevent unauthorized access.</font></font></font></u>
+<br><font face="Arial"><font color="#000080"><font size=-1>You can view
+the ports that are being used by active TCP/IP servers by keying NETSTAT
+*CNN at an iSeries command line.&nbsp; Press F14 to see port numbers used.</font></font></font></blockquote>
+<a NAME="startingmain"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I start the main server program on the iSeries?</font></font></font>
+<dir><font face="Arial"><font color="#000080"><font size=-1>The main server
+program may be started from an iSeries command entry line or from a CL program
+(like QSTRUP in QGPL.) In either case, use iSeries CL command:</font></font></font>
+<dir><font face="Arial"><font color="#000080"><font size=-1>VBTCP/STRDLOAD</font></font></font></dir>
+<font face="Arial"><font color="#000080"><font size=-1>to start the main
+server program.</font></font></font>
+<p><font face="Arial"><font color="#000080"><font size=-1>Alternatively,
+if your iSeries has FTP active, a user may issue the STRDLOAD command remotely
+from the PCs Downloader program (the user is prompted for a userid and
+password even if a assword has been saved.)&nbsp; You need no special authority
+to start the main server program.</font></font></font></dir>
+<a NAME="autostarting"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I get the Downloader server program to start automatically (applies
+to TCP/IP version only)?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>You
+may decide that you want the Downloader’s main server program to always
+be active, and you would like it to start automatically without any operator
+action.&nbsp; You may do so by including the commandVBTCP/STRDLOAD in CL
+program QSTRUP in library QGPL.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>The QSTRUP program
+is always called by OS/400 at the end of an IPL (indeed, this is how your
+various subsystems get started.)</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>The source code
+for QSTRUP is located in QCLSRC in library QGPL on most iSeriess.&nbsp;
+If you do not find the source code for QSTRUP, you may retrieve the program's
+source code with CL command RTVCLSRC (retrieve CL source).</font></font></font>
+<p><u><font face="Arial"><font color="#000080"><font size=-1>PLEASE NOTE:&nbsp;
+All iSeries system level TCP/IP support must be completely initialized and
+started before the Downloader's main server program may be started.&nbsp;
+If you're going to use the QSTRUP program to start the Downloader, you
+should place a DLYJOB DLY(1200)&nbsp;&nbsp; (delay job for 20 minutes)
+CL command in your QSTRUP source code.&nbsp; Place the DLYJOB command after
+the statements to start subsystems and TCP/IP and before the command to
+start the Downloader main server program.</font></font></font></u></blockquote>
+<a NAME="errforcefullyrejected"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>What
+does it mean when I get the message "connection is forcibly rejected…"
+?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>This
+message usually means that the Downloader's main server program has not
+been started.&nbsp; If you've been using the Downloader in the past and
+now you're suddenly experiencing a problem, this is probably the cause.&nbsp;
+Use CL command</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>VBTCP/CHKDLOAD</font></font></font></blockquote>
+<font face="Arial"><font color="#000080"><font size=-1>to check the status
+of the Downloader main server program.&nbsp; Use command</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>VBTCP/STRDLOAD</font></font></font></blockquote>
+<font face="Arial"><font color="#000080"><font size=-1>to start the Downloader
+main server program.</font></font></font></blockquote>
+<a NAME="chkdload"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I check to see if the main server program is active?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>You
+may check the status of the main server program with CL command:</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>VBTCP/CHKDLOAD</font></font></font></blockquote>
+<font face="Arial"><font color="#000080"><font size=-1>You'll receive a
+message displaying the status of the main server program.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>You can also
+look directly into the subsystem QSYSWRK and look for the main server program
+(job named DLOADERSRV) as well as spawned server programs (jobs named DRPT17xxx.)</font></font></font></blockquote>
+<a NAME="enddload"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I stop the main server program?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>You
+may stop the Downloader main server program with CL command:</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>VBTCP/ENDDLOAD</font></font></font></blockquote>
+<font face="Arial"><font color="#000080"><font size=-1>Alternately, you
+may allow the main server program to be terminated when the QSYSWRK subsystem
+is ended.</font></font></font></blockquote>
+<a NAME="router"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>What's
+a <i>router</i>?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>A <i>router</i>
+is connectivity software that establishes a connection between a PC and
+an iSeries over an SNA supported link.</font></font></font>
+<br><font face="Arial"><font color="#000080"><font size=-1>The router software
+that comes with IBM Client Access is really a NetSoft product.</font></font></font></blockquote>
+<a NAME="whatisanynet"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>What's
+<i>AnyNet</i>?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>"AnyNet"
+is IBM supplied software support for running SNA communications over a
+TCP/IP connection and vice versa.&nbsp; AnyNet support allows you to&nbsp;
+use applications software that was written for an SNA platform (like APPC)
+over the new TCP/IP types of links (like Ethernet and Token Ring).&nbsp;
+Many mixed-mode (like half twinax and half Ethernet) environments use AnyNet
+to keep application software consistent across both platforms.</font></font></font></blockquote>
+<a NAME="enablinganynet"></a><font color="#008000"><font face="Coronet"><font size=+3>Q:
+</font></font><font face="Arial"><font size=-1>How
+do I enable AnyNet?</font></font></font>
+<blockquote><font face="Arial"><font color="#000080"><font size=-1>There
+are three steps to enabling AnyNet:</font></font></font>
+<ul>
+<li>
+&nbsp;<font face="Arial"><font color="#000080"><font size=-1>Change&nbsp;
+your iSeries's network attribute for allowing AnyNet to *YES with CL command:</font></font></font></li>
+
+<ul><font face="Arial"><font color="#000080"><font size=-1>CHGNETA&nbsp;&nbsp;
+ALWANYNW(*YES)</font></font></font></ul>
+
+<li>
+<font face="Arial"><font color="#000080"><font size=-1>Create a virtual
+APPC communications controller with CL command:</font></font></font></li>
+
+<ul><font face="Arial"><font color="#000080"><font size=-1>CRTCTLAPPC&nbsp;
+CTLD(APPCOVRTCP)&nbsp;&nbsp; LINKTYPE(*ANYNW)&nbsp;&nbsp; RMTCPNAME(TCPIP)</font></font></font></ul>
+
+<li>
+<font face="Arial"><font color="#000080"><font size=-1>Vary the new controller
+on with CL command:</font></font></font></li>
+
+<ul><font face="Arial"><font color="#000080"><font size=-1>VRYCFG&nbsp;
+CFGOBJ(APPCOVRTCP)&nbsp; CFGTYPE(*CTL)&nbsp; STATUS(*ON)</font></font></font></ul>
+</ul>
+</blockquote>
+
+<blockquote>&nbsp;</blockquote>
+
+</body>
+</html>
